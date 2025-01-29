@@ -1,0 +1,142 @@
+$primary-color: #007bff;
+$secondary-color: #f8f9fa;
+$danger-color: #dc3545;
+$edit-color: #ffc107;
+$success-color: #28a745;
+$cancel-color: #6c757d;
+
+.container {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: $secondary-color;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+
+  button {
+    background: $primary-color;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+
+    &:hover {
+      background: darken($primary-color, 10%);
+    }
+  }
+}
+
+.empty-message {
+  color: #777;
+  font-style: italic;
+  margin: 50px 0;
+  text-align: center;
+}
+
+.list-group {
+  margin-top: 15px;
+  padding: 0;
+
+  .list-group-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 18px;
+    border-radius: 4px;
+    transition: background 0.3s ease-in-out;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    .list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      strong {
+        color: #333;
+        font-size: 1.1rem;
+      }
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      input {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+      }
+    }
+
+    button {
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease-in-out;
+
+      &.edit-btn {
+        background: $edit-color;
+        color: white;
+
+        &:hover {
+          background: darken($edit-color, 10%);
+        }
+      }
+
+      &.delete-btn {
+        background: $danger-color;
+        color: white;
+
+        &:hover {
+          background: darken($danger-color, 10%);
+        }
+      }
+
+      &.save-btn {
+        background: $success-color;
+        color: white;
+
+        &:hover {
+          background: darken($success-color, 10%);
+        }
+      }
+
+      &.cancel-btn {
+        background: $cancel-color;
+        color: white;
+
+        &:hover {
+          background: darken($cancel-color, 10%);
+        }
+      }
+    }
+  }
+}

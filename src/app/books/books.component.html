@@ -1,0 +1,28 @@
+<div class="container">
+  <h2>My Library</h2>
+
+  <form (ngSubmit)="addBook()">
+    <input type="text" placeholder="Book Title" [(ngModel)]="newBook.title" name="title" required>
+    <input type="text" placeholder="Author" [(ngModel)]="newBook.author" name="author" required>
+    <button type="submit">Add Book</button>
+  </form>
+
+  <p *ngIf="books.length === 0" class="empty-message">No books added yet.</p>
+
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let book of books; let i = index">
+      <div *ngIf="editingIndex !== i" class="list">
+        <strong>{{ book.title }}</strong> - {{ book.author }}
+        <button class="edit-btn" (click)="editBook(i)">✏️</button>
+        <button class="delete-btn" (click)="removeBook(i)">🗑️</button>
+      </div>
+
+      <div *ngIf="editingIndex === i">
+        <input type="text" [(ngModel)]="editedBook.title" name="editTitle">
+        <input type="text" [(ngModel)]="editedBook.author" name="editAuthor">
+        <button class="save-btn" (click)="saveEdit(i)">💾</button>
+        <button class="cancel-btn" (click)="cancelEdit()">❌</button>
+      </div>
+    </li>
+  </ul>
+</div>
